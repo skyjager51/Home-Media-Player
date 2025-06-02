@@ -1,0 +1,2 @@
+Hi all! this is my first java project! here i will push the code of my home medial player who stream .mp4 files over your private home network!
+in that way you will be able to load your .mp4 file and watch them with any device connected on your wi-fi! 

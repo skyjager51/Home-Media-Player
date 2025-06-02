@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="videos-list"></ul>
+    <video id="player" width="720" height="480" controls>
+        <source id="video-source" src="" type="video/mp4">
+        Something went wrong, your browser does not support the video tag.
+    </video>
+
+    <div>
+        <button id="go-back" type="button"><<</button>
+        <button id="go-forward" type="button">>></button>
+    </div>
+
+    <script>
+        //fetch the data from the bootstrap backend and parse the to a json fomat.
+        fetch('/videos/list')
+            .then(response => response.json())
+
+            //select the ul element in the html and fill it
+            .then(video_name => {
+                let anchor = document.getElementById('videos-list');
+
+                //for each video name found, create an anchor tag in the list and give it the name of the video
+                video_name.forEach(element => {
+                    let li = document.createElement('li');
+                    let a = document.createElement('a');
+                    a.href = '#';
+                    a.textContent = element;
+
+                    //when clicking on one of the <a>, pass the dir path with the relative video name to the <video> and reload the video player 
+                    a.onclick = (x) => {
+                        x.preventDefault();
+                        document.getElementById('video-source').src = '/video/' + element;
+                        document.getElementById('player').load();
+                    };
+
+                    //appned the data to the <li>
+                    li.appendChild(a);
+                    
+                    //append the <li> element to the <ul> list in the html
+                    anchor.appendChild(li);
+                
+                });
+            });
+
+        let video = document.getElementById("player");
+        let bButton = document.getElementById("go-back");
+        let fButton = document.getElementById("go-forward");
+
+        bButton.onclick = (y) => {
+           if (!isNaN(video.currentTime) && video.readyState > 0) {
+    video.currentTime = Math.max(0, video.currentTime - 10);
+}
+        };
+
+        fButton.onclick = (z) => {
+            if (!isNaN(video.currentTime) && video.readyState > 0) {
+    const targetTime = video.currentTime + 10;
+    if (!isNaN(video.duration)) { // Crucial check
+        video.currentTime = Math.min(video.duration, targetTime);
+    } else {
+        video.currentTime = targetTime; // Fallback if duration is not known
+    }
+}
+        };
+    </script>
+</body>
+</html>
