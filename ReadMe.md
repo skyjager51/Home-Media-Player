@@ -19,46 +19,46 @@ Base Assumption: In this guide, I’ll assume that the folder is located on your
 
 Step 1.
 Option A: Download ZIP (Easiest)
-	1.	Go to the GitHub page: https://github.com/skyjager51/Home-Media-Player
-	2.	Click the green Code button → Download ZIP.
-	3.	Extract the ZIP to your desktop. You’ll now see a folder called Home-Media-Player.
+- Go to the GitHub page: https://github.com/skyjager51/Home-Media-Player
+- Click the green Code button → Download ZIP.
+- Extract the ZIP to your desktop. You’ll now see a folder called Home-Media-Player.
 
 Option B: Clone with Git (Advanced)
-  If you already have Git installed, open your terminal and run: 
-    git clone https://github.com/skyjager51/Home-Media-Player.git
+If you already have Git installed, open your terminal and run: 
+- git clone https://github.com/skyjager51/Home-Media-Player.git
 
 
 Step 2.
 Install Java 17 (JDK 17) via Terminal (This project has been developed using jdk 17).
 
- On Windows (using Chocolatey)
-	1.	Open PowerShell as Administrator
-	2.	Install Chocolatey (only once):
-    Set-ExecutionPolicy Bypass -Scope Process -Force; `
-    [System.Net.ServicePointManager]::SecurityProtocol = `
-    [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; `
-    iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-  3.	Install JDK 17:
-    choco install temurin17 -y
+On Windows (using Chocolatey)
+- Open PowerShell as Administrator
+- Install Chocolatey (only once):
+- 	Set-ExecutionPolicy Bypass -Scope Process -Force; `
+- 	[System.Net.ServicePointManager]::SecurityProtocol = `
+- 	[System.Net.ServicePointManager]::SecurityProtocol -bor 3072; `
+- 	iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+- Install JDK 17:
+- 	choco install temurin17 -y
 
 
-  On macOS (using Homebrew)
-  1.	Open the Terminal
-	2.	Install Homebrew (only once):
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  3.	Install Java 17:
-     brew install temurin@17
+On macOS (using Homebrew)
+- Open the Terminal
+- Install Homebrew (only once):
+- 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+- Install Java 17:
+- 	brew install temurin@17
 
 
-  On Linux (Mint)
-  sudo apt update
-  sudo apt install openjdk-17-jdk -y
+On Linux (Mint)
+- sudo apt update
+- sudo apt install openjdk-17-jdk -y
 
 
-  Check Java is Installed:
-  java -version
+Check Java is Installed:
+- java -version
 
-  It should say something like: openjdk version "17..."
+It should say something like: openjdk version "17..."
 
 
 Step 3.
@@ -66,17 +66,17 @@ Install Maven
 
 On Windows:
 run in the powershell:
-  choco install maven -y
+- choco install maven -y
 
 
 On macOs:
 run in the terminal:
-  brew install maven
+- brew install maven
 
   
 On Linux (Mint):
 run in the terminal:
-  sudo apt install maven -y
+- sudo apt install maven -y
 
 
 Step 4.
@@ -86,27 +86,27 @@ Go to: https://code.visualstudio.com/ and download the installer for your OS. Fo
 
 Step 5.
 Install Java & Spring Boot Extensions in VS Code.
-	1.	Open VS Code
-	2.	Go to the Extensions tab (left sidebar or press Ctrl+Shift+X)
-	3.	Search and install:
-  	•	Java Extension Pack
-  	•	Spring Boot Extension Pack
+- Open VS Code
+- Go to the Extensions tab (left sidebar or press Ctrl+Shift+X)
+- Search and install:
+- 	Java Extension Pack
+- 	Spring Boot Extension Pack
 
 
 Step 6.
 Open the Project in VS Code
 
 Option A: From VS Code
-	1.	Click File → Open Folder
-	2.	Select the Home-Media-Player folder
+- Click File → Open Folder
+- Select the Home-Media-Player folder
 
 * A notification may pop up in the bottom-right asking to configure Java or Maven. Just click Yes or Allow on anything it shows.
 
 Option B: From Terminal
 
 In your terminal:
-  cd Desktop/Home-Media-Player
-  code .
+- cd Desktop/Home-Media-Player
+- code .
 
 
 Step 7.
@@ -120,9 +120,9 @@ Running your application.
 
 The esiest way is to just click the triagle in the top right of the vscode page, it should pop a new termial window that shows what it the server doing.
 but you can also:
-  Press Ctrl + Shift + P (or Cmd + Shift + P on macOS), and type: Spring Boot: Run
+- Press Ctrl + Shift + P (or Cmd + Shift + P on macOS), and type: Spring Boot: Run
 or:
-  in the terminal (you has to be in the project folder): ./mvnw spring-boot:run -> (If that doesn’t work, try mvn spring-boot:run)
+- in the terminal (you has to be in the project folder): ./mvnw spring-boot:run -> (If that doesn’t work, try mvn spring-boot:run)
 
 
 Step 9.
@@ -130,13 +130,13 @@ Access Your Media Player
 
 Once the app is running, open a browser on any device connected to your home Wi-Fi.
 In the address bar, type:
-  http://<your-computer-ip>:8080
+ - http://<your-computer-ip>:8080
 
-  example -> http://192.168.1.56:8080
+example -> http://192.168.1.56:8080
 
 You can find your IP by opening the terminal and typing:
-  •	macOS/Linux: ifconfig | grep inet
-	•	Windows: ipconfig
+- macOS/Linux: ifconfig | grep inet
+- Windows: ipconfig
 
 if you want connect to the same device that is hositng the server, you can just type localhost:8080
 
@@ -151,16 +151,5 @@ If you don't have them, download the packages for jdk 17 and maven, then open th
 To see videos, add mp4 files in the vidoes folder and then run the program. Then, in your browser, search for the ip of your hosting device and the port.
 
 
-Troubleshooting Tips
-
-Problem                                              Solution
-
-VS Code shows errors about Java or Maven             Click “Fix” or “Install” in the popup
-
-Port 8080 not available                              Try changing the port in application.properties
-
-Can’t find IP address                                Make sure you’re connected to Wi-Fi and use ipconfig / ifconfig
-
-Video not showing                                    Ensure your .mp4 files are inside src/main/resources/videos/
 
 
