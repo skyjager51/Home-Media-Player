@@ -11,6 +11,10 @@ I’ve also imposed a maximum of 1 hour before the server stops if it doesn’t 
 
 You can change the port from the application.properties file, the default one is port 8080.
 
+The tested browsers are: Chrome, Safari, Edge, Firefox.
+
+Remember, every time you run the program, check your device’s IP address because it could change (CLI command in the guide).
+
 ******Home Media Player – Easy Installation Guide (For Non-Technical Users)******
 This guide helps you download, set up, and run the Home Media Player on your computer – whether you’re using Windows, macOS, or Linux (In my case, Mint).
 Once installed, the app will stream your .mp4 video files over your home Wi-Fi. You’ll be able to watch your movies from any phone, tablet, or computer on the same network!
@@ -112,7 +116,7 @@ In your terminal:
 Step 7.
 Adding .mp4 files to the project to run them.
 
-Now, in Visual Studio Code on the right, you can see the folder of the project with all its components. To add an MP4 file, navigate to the src folder, then the main folder, then the resources folder, and finally the videos folder. Here, you can add your files. As you can see, there’s a sample black video. If you still haven’t got videos to load, don’t delete it. You should use it to test if the server works correctly once running in the network.
+Now, in Visual Studio Code on the right, you can see the folder of the project with all its components. To add an MP4 file, navigate to the src folder, then the main folder, then the resources folder, and finally the videos folder. Here, you can add your files. As you can see, there’s a sample black video. If you still haven’t got videos to load, don’t delete it. You should use it to test if the server works correctly once running on the network.
 
 
 Step 8.
@@ -138,17 +142,17 @@ You can find your IP by opening the terminal and typing:
 - macOS/Linux: ifconfig | grep inet
 - Windows: ipconfig
 
-if you want connect to the same device that is hositng the server, you can just type localhost:8080
+If you want to connect to the same device that is hosting the server, you can just type localhost:8080.
 
 
-We are all done! of you go to the page, you should see a list of all the mp4 files in the videos folder and a video player under them, if you click one of them, you should 
+We are all done! If you go to the page, you should see a list of all the MP4 files in the videos folder and a video player under them. If you click one of them, you should 
 be able to see the video.
 
 
 ******Home Media Player – Easy Installation Guide (For Technical Users)******
-To run this, you can clone the project in any folder in your pc.
-If you don't have them, download the packages for jdk 17 and maven, then open the project in your ide (if you use Intellij maven is pre-installed)
-To see videos, add mp4 files in the vidoes folder and then run the program. Then, in your browser, search for the ip of your hosting device and the port.
+To run this, you can clone the project in any folder on your pc.
+If you don't have them, download the packages for JDK 17 and Maven, then open the project in your IDE (if you use IntelliJ, Maven is pre-installed).
+To see videos, add MP4 files to the videos folder and then run the program. Then, in your browser, search for the ip of your hosting device and the port.
 
 
 
