@@ -57,6 +57,7 @@ On macOS (using Homebrew)
 On Linux (Mint)
 - sudo apt update
 - sudo apt install openjdk-17-jdk -y
+- if you have probelm with the java verson, you can run this command: sudo update-alternatives --config java
 
 
 Check Java is Installed:
@@ -155,5 +156,5 @@ If you don't have them, download the packages for JDK 17 and Maven, then open th
 To see videos, add MP4 files to the videos folder and then run the program. Then, in your browser, search for the ip of your hosting device and the port.
 
 
-
+Feel free to reach out to me on LinkedIn! --> www.linkedin.com/in/lorenzo-faccio
 
